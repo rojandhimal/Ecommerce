@@ -14,7 +14,7 @@ def store(request):
 	else:
 		#Create empty cart for now for non-logged in user
 		items = []
-		order = {'get_cart_total':0, 'get_cart_items':0}
+		order = {'get_cart_total':0, 'get_cart_items':0,'shipping': False}
 		cartItems = order['get_cart_items']
 
 	products = Product.objects.all()
@@ -31,7 +31,7 @@ def cart(request):
 	else:
 		#Create empty cart for now for non-logged in user
 		items = []
-		order = {'get_cart_total':0, 'get_cart_items':0}
+		order = {'get_cart_total':0, 'get_cart_items':0,'shipping': False}
 		cartItems = order['get_cart_items']
 
 	context = {'items':items, 'order':order,'cartItems':cartItems}
@@ -46,7 +46,7 @@ def checkout(request):
 	else:
 		#Create empty cart for now for non-logged in user
 		items = []
-		order = {'get_cart_total':0, 'get_cart_items':0}
+		order = {'get_cart_total':0, 'get_cart_items':0,'shipping': False}
 		cartItems = order['get_cart_items']
 
 	context = {'items':items, 'order':order,'cartItems':cartItems}
